@@ -12,7 +12,6 @@ const morganOption = NODE_ENV  === 'production' ? 'tiny' : 'dev';
 
 app.use(morgan(morganOption));
 app.use(helmet());
-//app.use(cors())
 
 const whitelist = ['http://localhost:3000', 'http://my-project.com'];
 const options = {
@@ -24,8 +23,7 @@ const options = {
     }
   }
 };
-
-// app.use(cors(options));
+app.use(cors(options));
 
 app.get('/', (req, res) => {
   res.send('Hello, Boilerplate!');
