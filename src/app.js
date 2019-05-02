@@ -2,18 +2,30 @@
 
 require('dotenv').config();
 const app = require('express')();
-//require('dotenv').config()
 const helmet = require('helmet');
 const morgan = require('morgan');
 const cors = require('cors');
 const { NODE_ENV } = require('./config');
 
 const morganOption = NODE_ENV  === 'production' ? 'tiny' : 'dev';
-console.log(NODE_ENV);
+
 
 app.use(morgan(morganOption));
 app.use(helmet());
-app.use(cors());
+//app.use(cors())
+
+const whitelist = ['http://localhost:3000', 'http://my-project.com'];
+const options = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+
+// app.use(cors(options));
 
 app.get('/', (req, res) => {
   res.send('Hello, Boilerplate!');
