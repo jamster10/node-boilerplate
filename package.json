@@ -11,8 +11,7 @@
     "deploy": "git push heroku master"
   },
   "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/jamster10/node-boilerplate.git"
+
   },
   "keywords": [
     "node",
