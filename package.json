@@ -10,9 +10,7 @@
     "predeploy": "npm audit",
     "deploy": "git push heroku master"
   },
-  "repository": {
-
-  },
+  "repository": {},
   "keywords": [
     "node",
     "mocha",
