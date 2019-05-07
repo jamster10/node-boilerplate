@@ -2,7 +2,7 @@
 const { NODE_ENV } = require('../config');
 
 module.exports = {
-  errorHandler: function errorHandler(err, req, res){
+  errorHandler: function errorHandler(err, req, res, next){
     let response;
     if( NODE_ENV === 'production'){
       response = {error: { message: 'Server Error'}};
@@ -10,7 +10,7 @@ module.exports = {
       console.log(err);
       response = {message: err.message, err};
     }
-    res.status(500).json(response);
+    res.status(err.status).json(response);
   }
 
 };
