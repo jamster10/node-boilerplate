@@ -12,7 +12,7 @@ const { morgan_Settings, cors_Settings, logger } = require('./util/middleware.js
 
 app.use( (req, res, next) => {
   const userToken = req.get('Authorization');
-  if( userToken.split(' ')[1] !== API_KEY){
+  if( !userToken || userToken.split(' ')[1] !== API_KEY){
     logger.error(`Unauthorized attempt using key: ${userToken ? userToken.split(' ')[1] : 'null'}`);
     let error = {
       status: 401,
