@@ -1,7 +1,7 @@
 {
   "name": "express-boilerplate",
   "version": "1.0.0",
-  "description": "Quick set up for express",
+  "description": "edit",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require test/setup.js",
@@ -22,9 +22,9 @@
   "author": "Kristof-Pierre Cummings",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jamster10/node-boilerplate/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/jamster10/node-boilerplate#readme",
+  "homepage": "",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
