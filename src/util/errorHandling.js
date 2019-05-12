@@ -10,7 +10,7 @@ module.exports = {
       console.log(err);
       response = {message: err.message, err};
     }
-    res.status(err.status).json(response);
+    res.status(err.status || 500).json(response);
   }
 
 };
